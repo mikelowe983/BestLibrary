@@ -14,5 +14,10 @@ namespace BestLibrary.Services
         {
             return JsonConvert.DeserializeObject<T>(json);
         }
+
+        public static T ReSerialize<T>(T toSerialize)
+        {
+            return Deserialize<T>(Serialize(toSerialize));
+        }
     }
 }
