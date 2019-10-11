@@ -18,6 +18,6 @@ steps:
 
 - task: PublishCodeCoverageResults@1
   inputs:
-    summaryFileLocation: '**/coverage.cobertura.xml'
+    summaryFileLocation: '**/*.coverage'
     reportDirectory: $(Build.SourcesDirectory)\results
     codecoverageTool: cobertura
