@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestLibrary", "BestLibrary\BestLibrary.csproj", "{8670735F-B290-420B-AB0C-61E276A284A0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F7797C75-2F47-4E00-A45D-16983707CE87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestLibrary.Tests", "BestLibrary.Tests\BestLibrary.Tests.csproj", "{5263E797-9E0B-4D53-B55D-FF67B31FC562}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,12 @@ Global
 		{8670735F-B290-420B-AB0C-61E276A284A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8670735F-B290-420B-AB0C-61E276A284A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8670735F-B290-420B-AB0C-61E276A284A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5263E797-9E0B-4D53-B55D-FF67B31FC562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5263E797-9E0B-4D53-B55D-FF67B31FC562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5263E797-9E0B-4D53-B55D-FF67B31FC562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5263E797-9E0B-4D53-B55D-FF67B31FC562}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5263E797-9E0B-4D53-B55D-FF67B31FC562} = {F7797C75-2F47-4E00-A45D-16983707CE87}
 	EndGlobalSection
 EndGlobal
