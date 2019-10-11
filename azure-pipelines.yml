@@ -14,7 +14,7 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*.Tests.csproj'
-    arguments: '--collect:"Code Coverage"'
+    arguments: '--collect "Code Coverage"'
 
 - task: PublishCodeCoverageResults@1
   inputs:
