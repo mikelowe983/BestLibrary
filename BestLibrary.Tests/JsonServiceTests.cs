@@ -35,14 +35,14 @@ namespace BestLibrary.Tests
         {
             var test = new TestClass
             {
-                Cost = 45.3,
+                Cost = 88.5,
                 Count = 42,
                 Type = "Flange"
             };
 
             var json = JsonService.Serialize(test);
 
-            var expectedJson = "{\"Count\":42,\"Type\":\"Flange\",\"Cost\":45.3}";
+            var expectedJson = "{\"Count\":42,\"Type\":\"Flange\",\"Cost\":88.5}";
 
             Assert.AreEqual(expectedJson, json);
             Assert.Fail();
