@@ -16,3 +16,10 @@ steps:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(Build.SourcesDirectory)/BestLibrary.Tests/coverage.cobertura.xml'
     failIfCoverageEmpty: true
+
+- task: BuildQualityChecks@6
+  inputs:
+    checkCoverage: true
+    coverageFailOption: 'fixed'
+    coverageType: 'blocks'
+    coverageThreshold: '75'
