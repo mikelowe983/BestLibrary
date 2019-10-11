@@ -9,11 +9,17 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*.Tests.csproj'
-    arguments: '--collect "Code Coverage"'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
     
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '**/*.coverage'
-    reportDirectory: '$(Agent.TempDirectory)/**'
+    summaryFileLocation: '$(Build.SourcesDirectory)/BestLibrary.Tests/coverage.cobertura.xml'
     failIfCoverageEmpty: true
+
+- task: BuildQualityChecks@6
+  inputs:
+    checkCoverage: true
+    coverageFailOption: 'fixed'
+    coverageType: 'blocks'
+    coverageThreshold: '75'
