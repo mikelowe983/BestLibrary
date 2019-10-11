@@ -22,3 +22,8 @@ steps:
     reportDirectory: $(Build.SourcesDirectory)\results
     codecoverageTool: cobertura
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '**/*.coverage'
+    ArtifactName: 'coverage'
+    publishLocation: 'Container'
