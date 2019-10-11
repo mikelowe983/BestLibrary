@@ -21,3 +21,4 @@ steps:
     summaryFileLocation: '**/*.coverage'
     reportDirectory: $(Build.SourcesDirectory)\results
     codecoverageTool: cobertura
+
