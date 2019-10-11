@@ -12,6 +12,7 @@ namespace BestLibrary.Services
 
         public static T Deserialize<T>(string json)
         {
+            throw new Exception("OUCH"!);
             return JsonConvert.DeserializeObject<T>(json);
         }
 
