@@ -11,6 +11,15 @@ namespace BestLibrary.Tests
             public int Count { get; set; }
             public string Type { get; set; }
             public double Cost { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                if(obj is TestClass other)
+                {
+                    return other.Count == Count && other.Type == Type && other.Cost == Cost;
+                }
+                return false;
+            }
         }
 
         [TestMethod]
@@ -31,21 +40,19 @@ namespace BestLibrary.Tests
         }
 
         [TestMethod]
-        public void JsonService_WillFail()
+        public void JsonService_Deserialize()
         {
-            var test = new TestClass
+            var json = "{\"Count\":5,\"Type\":\"Thingie\",\"Cost\":88.5}";
+            var expectedClass = new TestClass
             {
-                Cost = 45.3,
-                Count = 42,
-                Type = "Flange"
+                Cost = 88.5,
+                Count = 5,
+                Type = "Thingie"
             };
 
-            var json = JsonService.Serialize(test);
+            var val = JsonService.Deserialize<TestClass>(json);            
 
-            var expectedJson = "{\"Count\":42,\"Type\":\"Flange\",\"Cost\":45.3}";
-
-            Assert.AreEqual(expectedJson, json);
-            Assert.Fail();
+            Assert.AreEqual(expectedClass, val);            
         }
     }
 }
