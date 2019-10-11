@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
@@ -14,16 +9,9 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*.Tests.csproj'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
+    arguments: '--collect "Code Coverage"'
 
 - task: PublishCodeCoverageResults@1
   inputs:
-    summaryFileLocation: '**/*.coverage'
-    reportDirectory: $(Build.SourcesDirectory)\results
+    summaryFileLocation: '**/*.coverage' 
     codecoverageTool: cobertura
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '**/*.coverage'
-    ArtifactName: 'coverage'
-    publishLocation: 'Container'
