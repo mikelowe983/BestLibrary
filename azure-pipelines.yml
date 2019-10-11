@@ -14,6 +14,6 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '**/*.coverage'
-    reportDirectory: '$(Agent.TempDirectory)/**'
+    summaryFileLocation: 'coverage.cobertura.xml'
+    reportDirectory: '$(Build.SourcesDirectory)/BestLibrary.Tests/'
     failIfCoverageEmpty: true
