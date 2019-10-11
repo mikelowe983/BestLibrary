@@ -55,19 +55,19 @@ namespace BestLibrary.Tests
             Assert.AreEqual(expectedClass, val);            
         }
 
-        //[TestMethod]
-        //public void JsonService_CanReserialize()
-        //{
-        //    var test = new TestClass
-        //    {
-        //        Cost = 22.50,
-        //        Count = 21,
-        //        Type = "Connector"
-        //    };
+        [TestMethod]
+        public void JsonService_CanReserialize()
+        {
+            var test = new TestClass
+            {
+                Cost = 22.50,
+                Count = 21,
+                Type = "Connector"
+            };
 
-        //    var val = JsonService.ReSerialize(test);
+            var val = JsonService.ReSerialize(test);
 
-        //    Assert.AreEqual(test, val);
-        //}
+            Assert.AreEqual(test, val);
+        }
     }
 }
