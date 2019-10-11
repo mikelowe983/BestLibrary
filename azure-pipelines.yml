@@ -10,3 +10,8 @@ steps:
     command: 'test'
     projects: '**/*.Tests.csproj'
     arguments: '--collect "Code Coverage"'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    summaryFileLocation: '**/*.coverage' 
+    codecoverageTool: cobertura
