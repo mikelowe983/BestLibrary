@@ -14,3 +14,9 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*.Tests.csproj'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    summaryFileLocation: $(Build.SourcesDirectory)\results\coverage.cobertura.xml
+    reportDirectory: $(Build.SourcesDirectory)\results
+    codecoverageTool: cobertura
