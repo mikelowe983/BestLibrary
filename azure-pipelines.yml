@@ -15,5 +15,5 @@ steps:
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '**/*.coverage'
-    reportDirectory: '$(Agent.TempDirectory)'
+    reportDirectory: '$(Agent.TempDirectory)/**'
     failIfCoverageEmpty: true
