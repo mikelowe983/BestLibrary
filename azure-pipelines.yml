@@ -17,6 +17,12 @@ steps:
     summaryFileLocation: '$(Build.SourcesDirectory)/BestLibrary.Tests/coverage.cobertura.xml'
     failIfCoverageEmpty: true
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/BestLibrary.Tests'
+    Contents: 'coverage.cobertura.xml'
+    TargetFolder: '$(System.DefaultWorkingDirectory)'
+
 - task: BuildQualityChecks@6
   inputs:
     checkCoverage: true
