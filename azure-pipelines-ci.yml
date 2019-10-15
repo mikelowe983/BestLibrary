@@ -25,18 +25,12 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
-    projects: '**/BestLibrary.csproj'
-    arguments: '--configuration release'
-
-
-- task: NuGetCommand@2
-  inputs:
     command: 'pack'
     packagesToPack: '**/BestLibrary.csproj'
+    configuration: '$(buildConfiguration)'
+    includesymbols: true
     versioningScheme: 'byBuildNumber'
-    includeSymbols: true
-
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
