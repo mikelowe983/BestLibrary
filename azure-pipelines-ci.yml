@@ -23,6 +23,12 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    configuration: '$(buildConfiguration)'
+
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
@@ -30,11 +36,6 @@ steps:
     versioningScheme: 'byBuildNumber'
     includeSymbols: true
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-    configuration: '$(buildConfiguration)'
 
 - task: PublishBuildArtifacts@1
   inputs:
