@@ -27,7 +27,8 @@ steps:
   inputs:
     command: 'build'
     projects: '**/BestLibrary.csproj'
-    configuration: '$(buildConfiguration)'
+    arguments: '--configuration release'
+
 
 - task: NuGetCommand@2
   inputs:
