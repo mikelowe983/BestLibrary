@@ -6,7 +6,7 @@
 trigger:
 - releases/*
 
-name: $(Build.SourceBranchName).$(rev:.r)
+name: $(Build.SourceBranchName)$(rev:.r)
 
 pool:
   vmImage: 'windows-latest'
