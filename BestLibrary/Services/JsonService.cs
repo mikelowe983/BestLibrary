@@ -9,7 +9,7 @@ namespace BestLibrary.Services
         /// Serializes an object to a JSON string
         /// </summary>
         /// <param name="toSerialize">The Object to serialize</param>
-        /// <returns>A JSON string representation of the object</returns>
+        /// <returns>A serialized JSON string representation of the object</returns>
         public static string Serialize(object toSerialize)
         {
             return JsonConvert.SerializeObject(toSerialize);
