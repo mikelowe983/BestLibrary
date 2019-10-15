@@ -36,7 +36,6 @@ steps:
     versioningScheme: 'byBuildNumber'
     includeSymbols: true
 
-
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
