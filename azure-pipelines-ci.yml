@@ -30,6 +30,12 @@ steps:
     versioningScheme: 'byBuildNumber'
     includeSymbols: true
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    configuration: '$(buildConfiguration)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
