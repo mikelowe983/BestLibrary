@@ -1,2 +1,2 @@
 # BestLibrary
-Best Library
+Best Library is the best
